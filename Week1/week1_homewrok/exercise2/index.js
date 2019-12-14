@@ -26,7 +26,7 @@ const connection = mysql.createConnection({
 
 const execQuery = util.promisify(connection.query.bind(connection));
 
-const createAndSeedDB = async query => {
+const selectQuery = async query => {
   connection.connect();
 
   try {
@@ -47,7 +47,7 @@ const createAndSeedDB = async query => {
       case top10CountriesBySurfaceArea:
       // 9
       case top10CitiesByPopulation:
-        await execQuery(countriesAbove8M, (error, results) => {
+        await execQuery(query, (error, results) => {
           if (error) throw error;
           if (results) results.forEach((res, index) => console.log(`${index + 1}) ${res.Name}`));
         });
@@ -74,5 +74,5 @@ const createAndSeedDB = async query => {
   }
 };
 
-createAndSeedDB(populationSum);
+selectQuery(countriesAbove8M);
 connection.end();

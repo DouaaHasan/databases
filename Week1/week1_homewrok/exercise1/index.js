@@ -5,8 +5,8 @@ const util = require('util');
 
 const { employees, departments, projects } = require('./tables');
 const {
-  dropDB,
-  createDB,
+  dropDBCompany,
+  createDBCompany,
   useCompany,
   createEmpTable,
   createDeptTable,
@@ -28,8 +28,8 @@ const createAndSeedDB = async () => {
 
   try {
     // create tables
-    await execQuery(dropDB);
-    await execQuery(createDB);
+    await execQuery(dropDBCompany);
+    await execQuery(createDBCompany);
     await execQuery(useCompany);
     await execQuery(createEmpTable);
     await execQuery(createDeptTable);

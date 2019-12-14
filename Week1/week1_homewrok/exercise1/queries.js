@@ -1,8 +1,8 @@
 'use strict';
 
 const queries = {
-  dropDB: `DROP DATABASE IF EXISTS company`,
-  createDB: 'CREATE DATABASE IF NOT EXISTS company',
+  dropDBCompany: `DROP DATABASE IF EXISTS company`,
+  createDBCompany: 'CREATE DATABASE IF NOT EXISTS company',
   useCompany: 'USE company',
   createEmpTable:
     'CREATE TABLE IF NOT EXISTS Employees (emp_no int, emp_name varchar(25), salary float, reports_to text)',
