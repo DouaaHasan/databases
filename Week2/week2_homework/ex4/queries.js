@@ -2,7 +2,7 @@
 
 const queries = {
   // All department numbers and the number of employees working there.
-  getAllDeptNumbsAndAllEmployeesNumbsAccordingly: `SELECT dept, employee_no FROM employee`,
+  getAllDeptNumbsAndAllEmployeesNumbsAccordingly: `SELECT dept Dept_no, count(employee_no) Employee_Count FROM employee e JOIN department d ON e.dept = d.dept_no GROUP by dept`,
 
   // Sum of the salaries of all employees.
   sumSalaries: `SELECT SUM(salary) Total_Salaries FROM Employee`,
